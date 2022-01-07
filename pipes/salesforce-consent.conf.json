@@ -1,0 +1,79 @@
+{
+  "_id": "salesforce-consent",
+  "type": "pipe",
+  "source": {
+    "type": "embedded",
+    "entities": [{
+      "_id": "0",
+      "HasConsented": true,
+      "LastUpdated": "2015-10-25",
+      "Username": "Unjudosely",
+      "title": "email-marketing"
+    }, {
+      "_id": "1",
+      "HasConsented": true,
+      "LastUpdated": "2015-12-20",
+      "Username": "Wim79",
+      "title": "email-marketing"
+    }, {
+      "_id": "2",
+      "HasConsented": true,
+      "LastUpdated": "2017-11-21",
+      "Username": "Gotin1984",
+      "title": "email-marketing"
+    }, {
+      "_id": "3",
+      "HasConsented": true,
+      "LastUpdated": "2017-11-16",
+      "Username": "Mays1944",
+      "title": "email-marketing"
+    }, {
+      "_id": "4",
+      "HasConsented": false,
+      "LastUpdated": "2016-12-12",
+      "Username": "Theimence",
+      "title": "email-marketing"
+    }, {
+      "_id": "31",
+      "HasConsented": false,
+      "LastUpdated": "2018-10-30",
+      "Username": "Somper",
+      "title": "phone-marketing"
+    }, {
+      "_id": "7",
+      "HasConsented": false,
+      "LastUpdated": "2017-11-17",
+      "Username": "Thret1941",
+      "title": "email-marketing"
+    }, {
+      "_id": "8",
+      "HasConsented": false,
+      "LastUpdated": "2017-10-29",
+      "Username": "Briver",
+      "title": "email-marketing"
+    }, {
+      "_id": "9",
+      "HasConsented": false,
+      "LastUpdated": "2015-12-28",
+      "Username": "jules",
+      "title": "email-marketing"
+    }, {
+      "_id": "44",
+      "HasConsented": true,
+      "LastUpdated": "2016-11-14",
+      "Username": "Shenlace",
+      "title": "phone-marketing"
+    }]
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "salesforce", "consent"]
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "_id": "crm-person",
+  "type": "pipe",
+  "source": {
+    "type": "embedded",
+    "entities": [{
+      "_id": "1",
+      "Address": "Helmers vei 245",
+      "Customerid": "1",
+      "EmailAddress": "torjussand@einrot.com",
+      "FirstName": "Torjus",
+      "Gender": "male",
+      "LastName": "Sand",
+      "MiddleInitial": "M",
+      "PostalCode": "5031",
+      "SSN": "23072451376",
+      "Username": "Unjudosely"
+    }, {
+      "_id": "2",
+      "Address": "Frognerveien 60",
+      "Customerid": "2",
+      "EmailAddress": "larsevjen@rhyta.com",
+      "FirstName": "Lars",
+      "Gender": "male",
+      "LastName": "Evjen",
+      "PostalCode": "3121",
+      "SSN": "09046987892",
+      "Username": "Wim79"
+    }, {
+      "_id": "3",
+      "Address": "Gydas gate 227",
+      "Customerid": "3",
+      "EmailAddress": "siri@me.com",
+      "FirstName": "Siri",
+      "Gender": "female",
+      "LastName": "Olsen",
+      "PostalCode": "3733",
+      "SSN": "07033589877",
+      "Username": "Gotin1984"
+    }, {
+      "_id": "100",
+      "Address": "Nadderudåsen 186",
+      "Customerid": "100",
+      "EmailAddress": "isakeikeland@teleworm.us",
+      "FirstName": "Isak",
+      "Gender": "male",
+      "LastName": "Eikeland",
+      "MiddleInitial": "E",
+      "PostalCode": "9325",
+      "SSN": "02023688018",
+      "Username": "Mays1944"
+    }, {
+      "_id": "99",
+      "Address": "Sommerfjøsvegen 143",
+      "Customerid": "99",
+      "EmailAddress": "sebastianskjold@dayrep.com",
+      "FirstName": "Sebastian",
+      "Gender": "male",
+      "LastName": "Skjold",
+      "MiddleInitial": "T",
+      "PostalCode": "7080",
+      "SSN": "27035223852",
+      "Username": "Theimence"
+    }, {
+      "_id": "93",
+      "Address": "Kongens gate 69",
+      "Customerid": "93",
+      "EmailAddress": "caspiannygard@einrot.com",
+      "FirstName": "Caspian",
+      "Gender": "male",
+      "LastName": "Nygård",
+      "MiddleInitial": "I",
+      "PostalCode": "0153",
+      "SSN": "12032920177",
+      "Username": "Somper"
+    }, {
+      "_id": "91",
+      "Address": "Åsmostubben 19",
+      "Customerid": "91",
+      "EmailAddress": "davidberntsen@superrito.com",
+      "FirstName": "David",
+      "Gender": "male",
+      "LastName": "Berntsen",
+      "MiddleInitial": "M",
+      "PostalCode": "9011",
+      "SSN": "19125622937",
+      "Username": "Thret1941"
+    }, {
+      "_id": "90",
+      "Address": "Fagerliveien 108",
+      "Customerid": "90",
+      "EmailAddress": "lucaslie@cuvox.de",
+      "FirstName": "Lucas",
+      "Gender": "male",
+      "LastName": "Lie",
+      "MiddleInitial": "T",
+      "PostalCode": "1605",
+      "SSN": "26026727498",
+      "Username": "Briver"
+    }, {
+      "_id": "80",
+      "Address": "Zetlitzveien 241",
+      "Customerid": "80",
+      "EmailAddress": "julieandersen@superrito.com",
+      "FirstName": "Julie",
+      "Gender": "female",
+      "LastName": "Andersen",
+      "MiddleInitial": "I",
+      "PostalCode": "4017",
+      "SSN": "16115430967",
+      "Username": "jules"
+    }, {
+      "_id": "81",
+      "Address": "Kong Trygves vei 32",
+      "Customerid": "81",
+      "EmailAddress": "camillawilhelmsen@dayrep.com",
+      "FirstName": "Camilla",
+      "Gender": "female",
+      "LastName": "Wilhelmsen",
+      "MiddleInitial": "M",
+      "PostalCode": "3125",
+      "SSN": "22035964477",
+      "Username": "Shenlace"
+    }]
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "crm", "person"]
+        ]
+      ]
+    }
+  }
+}

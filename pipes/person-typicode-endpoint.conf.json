@@ -1,0 +1,16 @@
+{
+  "_id": "person-typicode-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "person-typicode"
+  },
+  "sink": {
+    "type": "json",
+    "system": "typicode",
+    "url": "posts"
+  },
+  "pump": {
+    "mode": "$ENV(pump-mode)"
+  }
+}

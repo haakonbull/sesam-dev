@@ -1,0 +1,170 @@
+{
+  "_id": "erp-person",
+  "type": "pipe",
+  "source": {
+    "type": "embedded",
+    "entities": [{
+      "_id": "1",
+      "Country": "NO",
+      "Gender": "male",
+      "GivenName": "Aleksander",
+      "MiddleInitial": "M",
+      "MoneyUsed": "1014",
+      "Number": "10",
+      "SSN": "12052427741",
+      "StreetAddress": "Drengs 36",
+      "Surname": "Ommundsen",
+      "TimesOrdered": "17",
+      "Title": "Mr.",
+      "Username": "Grale1949",
+      "ZipCode": "1390"
+    }, {
+      "_id": "2",
+      "Country": "NO",
+      "Gender": "male",
+      "GivenName": "Lars",
+      "MoneyUsed": "13798",
+      "Number": "2",
+      "SSN": "09046987892",
+      "StreetAddress": "Øvre 12",
+      "Surname": "Evjen",
+      "TimesOrdered": "3",
+      "Title": "Mr.",
+      "Username": "Wimen1979",
+      "ZipCode": "5239"
+    }, {
+      "_id": "3",
+      "Country": "NO",
+      "Gender": "female",
+      "GivenName": "Siri",
+      "MoneyUsed": "15878",
+      "Number": "3",
+      "SSN": "07033589877",
+      "StreetAddress": "Gydas vei",
+      "Surname": "Olsen",
+      "TimesOrdered": "13",
+      "Title": "Ms.",
+      "Username": "Gotin1984",
+      "ZipCode": "5003"
+    }, {
+      "_id": "4",
+      "Country": "NO",
+      "Gender": "male",
+      "GivenName": "Isak",
+      "MiddleInitial": "E",
+      "MoneyUsed": "19392",
+      "Number": "100",
+      "SSN": "02023688018",
+      "StreetAddress": "Frodegaten gate",
+      "Surname": "Eikeland",
+      "TimesOrdered": "16",
+      "Title": "Mr.",
+      "Username": "Mays1944",
+      "ZipCode": "4017"
+    }, {
+      "_id": "5",
+      "Country": "NO",
+      "Gender": "male",
+      "GivenName": "Sebastian",
+      "MiddleInitial": "T",
+      "MoneyUsed": "13935",
+      "Number": "99",
+      "SSN": "27035223852",
+      "StreetAddress": "Kværnerveien 148",
+      "Surname": "Skjold",
+      "TimesOrdered": "18",
+      "Title": "Mr.",
+      "Username": "Theimence",
+      "ZipCode": "3732"
+    }, {
+      "_id": "6",
+      "Country": "NO",
+      "Gender": "male",
+      "GivenName": "Caspian",
+      "MiddleInitial": "I",
+      "MoneyUsed": "11923",
+      "Number": "93",
+      "SSN": "12032920177",
+      "StreetAddress": "Lindøy Løkkavei",
+      "Surname": "Nygård",
+      "TimesOrdered": "12",
+      "Title": "Mr.",
+      "Username": "Aney1996",
+      "ZipCode": "2213"
+    }, {
+      "_id": "7",
+      "Country": "NO",
+      "Gender": "male",
+      "GivenName": "David",
+      "MiddleInitial": "M",
+      "MoneyUsed": "4475",
+      "Number": "91",
+      "SSN": "19125622937",
+      "StreetAddress": "Hesjejordet 83",
+      "Surname": "Berntsen",
+      "TimesOrdered": "14",
+      "Title": "Mr.",
+      "Username": "Thret1941",
+      "ZipCode": "3739"
+    }, {
+      "_id": "8",
+      "Country": "NO",
+      "Gender": "male",
+      "GivenName": "Lucas",
+      "MiddleInitial": "T",
+      "MoneyUsed": "2527",
+      "Number": "90",
+      "SSN": "26026727498",
+      "StreetAddress": "Storheia 10",
+      "Surname": "Lie",
+      "TimesOrdered": "18",
+      "Title": "Mr.",
+      "Username": "Briver",
+      "ZipCode": "3121"
+    }, {
+      "_id": "9",
+      "Country": "NO",
+      "Gender": "female",
+      "GivenName": "Erika",
+      "MiddleInitial": "L",
+      "MoneyUsed": "4021",
+      "Number": "9",
+      "SSN": "14085111225",
+      "StreetAddress": "Tiurvegen vei",
+      "Surname": "Olsen",
+      "TimesOrdered": "1",
+      "Title": "Mrs.",
+      "Username": "Whavillat",
+      "ZipCode": "8657"
+    }, {
+      "_id": "10",
+      "Country": "NO",
+      "Gender": "female",
+      "GivenName": "Camilla",
+      "MiddleInitial": "M",
+      "MoneyUsed": "17926",
+      "Number": "81",
+      "SSN": "22035964477",
+      "StreetAddress": "Stortuveien Solheims",
+      "Surname": "Wilhelmsen",
+      "TimesOrdered": "19",
+      "Title": "Ms.",
+      "Username": "Shenclace",
+      "ZipCode": "1385"
+    }]
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "erp", "person"]
+        ],
+        ["add", "SSN-ni",
+          ["ni", "hr-person", "_S.SSN"]
+        ]
+      ]
+    }
+  }
+}

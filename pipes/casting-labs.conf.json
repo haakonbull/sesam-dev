@@ -1,0 +1,27 @@
+{
+  "_id": "casting-labs",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["copy", "*"],
+        ["filter",
+          ["in", "~:erp:person", "_S.rdf:type"]
+        ],
+        ["add", "TimesOrdered",
+          ["string",
+            ["plus", 1,
+              ["integer", "_S.erp-person:TimesOrdered"]
+            ]
+          ]
+        ]
+      ]
+    }
+  }
+}

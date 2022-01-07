@@ -1,0 +1,18 @@
+{
+  "_id": "filter-labs",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["add", "foo", "bar"],
+        ["copy", "*"]
+      ]
+    }
+  }
+}

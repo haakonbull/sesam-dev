@@ -1,0 +1,20 @@
+{
+  "_id": "filter-entities-labs",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["copy", "*"],
+        ["filter",
+          ["in", "~:crm:person", "_S.rdf:type"]
+        ]
+      ]
+    }
+  }
+}

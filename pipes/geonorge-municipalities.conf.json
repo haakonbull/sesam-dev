@@ -1,0 +1,31 @@
+{
+  "_id": "geonorge-municipalities",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "geonorge-county"
+  },
+  "transform": [{
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["neq", "_S._deleted", true]
+        ],
+        ["copy", "_id"],
+        ["create-child",
+          ["apply", "build-municipality", "_S.kommuner"]
+        ]
+      ],
+      "build-municipality": [
+        ["copy", "*"],
+        ["add", "_id", "_S.kommunenummer"],
+        ["add", "rdf:type",
+          ["ni", "geonorge", "municipality"]
+        ]
+      ]
+    }
+  }, {
+    "type": "emit_children"
+  }]
+}

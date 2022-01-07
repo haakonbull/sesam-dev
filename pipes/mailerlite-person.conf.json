@@ -1,0 +1,47 @@
+{
+  "_id": "mailerlite-person",
+  "type": "pipe",
+  "source": {
+    "type": "embedded",
+    "entities": [{
+      "country": "NO",
+      "email": "torjus@gmail.com",
+      "socialsecuritynumber": "23072451376"
+    }, {
+      "country": "NO",
+      "email": "larsevjen@rhyta.com",
+      "socialsecuritynumber": "09046987892"
+    }, {
+      "country": "NO",
+      "email": "siri@me.com",
+      "socialsecuritynumber": "07033589877"
+    }, {
+      "country": "NO",
+      "email": "davidberntsen@superrito.com",
+      "socialsecuritynumber": "19125622937"
+    }, {
+      "country": "NO",
+      "email": "lucaslie@cuvox.de",
+      "socialsecuritynumber": "26026727498"
+    }, {
+      "country": "NO",
+      "email": "runewold@armyspy.com",
+      "socialsecuritynumber": "05064951171"
+    }]
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "_id", "_S.socialsecuritynumber"],
+        ["add", "SSN-ni",
+          ["ni", "hr-person", "_S.socialsecuritynumber"]
+        ],
+        ["add", "rdf:type",
+          ["ni", "mailerlite", "person"]
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "_id": "hr-person",
+  "type": "pipe",
+  "source": {
+    "type": "embedded",
+    "entities": [{
+      "_id": "23072451376",
+      "Country": "NO",
+      "EmailAddress": "TorjusSand@einrot.com",
+      "Gender": "male",
+      "GivenName": "Torjus",
+      "MiddleInitial": "M",
+      "Number": "1",
+      "SSN": "23072451376",
+      "StreetAddress": "Helmers vei 242",
+      "Surname": "Sand",
+      "Title": "Mr.",
+      "Username": "Unjudosely",
+      "ZipCode": "5031"
+    }, {
+      "_id": "09046987892",
+      "Country": "NO",
+      "EmailAddress": "LarsEvjen@rhyta.com",
+      "Gender": "male",
+      "GivenName": "Lars",
+      "Number": "2",
+      "SSN": "09046987892",
+      "StreetAddress": "Frognerveien 60",
+      "Surname": "Evjen",
+      "Title": "Mr.",
+      "Username": "Wimen1979",
+      "ZipCode": "3121"
+    }, {
+      "_id": "07033589877",
+      "Country": "NO",
+      "EmailAddress": "siriolsen@dayrep.com",
+      "Gender": "female",
+      "GivenName": "Siri",
+      "Number": "3",
+      "SSN": "07033589877",
+      "StreetAddress": "Gydas gate 227",
+      "Surname": "Olsen",
+      "Title": "Ms.",
+      "Username": "Gotin1984",
+      "ZipCode": "3733"
+    }, {
+      "_id": "02023688018",
+      "Country": "NO",
+      "EmailAddress": "IsakEikeland@teleworm.us",
+      "Gender": "male",
+      "GivenName": "Isak",
+      "MiddleInitial": "E",
+      "Number": "100",
+      "SSN": "02023688018",
+      "StreetAddress": "Nadderudåsen 186",
+      "Surname": "Eikeland",
+      "Title": "Mr.",
+      "Username": "Mays1944",
+      "ZipCode": "9325"
+    }, {
+      "_id": "27035223852",
+      "Country": "NO",
+      "EmailAddress": "SebastianSkjold@dayrep.com",
+      "Gender": "male",
+      "GivenName": "Sebastian",
+      "MiddleInitial": "T",
+      "Number": "99",
+      "SSN": "27035223852",
+      "StreetAddress": "Sommerfjøsvegen 143",
+      "Surname": "Skjold",
+      "Title": "Mr.",
+      "Username": "Theimence",
+      "ZipCode": "7080"
+    }, {
+      "_id": "12032920177",
+      "Country": "NO",
+      "EmailAddress": "CaspianNygard@einrot.com",
+      "Gender": "male",
+      "GivenName": "Caspian",
+      "MiddleInitial": "I",
+      "Number": "93",
+      "SSN": "12032920177",
+      "StreetAddress": "Kongens gate 69",
+      "Surname": "Nygård",
+      "Title": "Mr.",
+      "Username": "Aney1996",
+      "ZipCode": "0153"
+    }, {
+      "_id": "19125622937",
+      "Country": "NO",
+      "EmailAddress": "DavidBerntsen@superrito.com",
+      "Gender": "male",
+      "GivenName": "David",
+      "MiddleInitial": "M",
+      "Number": "91",
+      "SSN": "19125622937",
+      "StreetAddress": "Åsmostubben 19",
+      "Surname": "Berntsen",
+      "Title": "Mr.",
+      "Username": "Thret1941",
+      "ZipCode": "9011"
+    }, {
+      "_id": "26026727498",
+      "Country": "NO",
+      "EmailAddress": "LucasLie@cuvox.de",
+      "Gender": "male",
+      "GivenName": "Lucas",
+      "MiddleInitial": "T",
+      "Number": "90",
+      "SSN": "26026727498",
+      "StreetAddress": "Fagerliveien 108",
+      "Surname": "Lie",
+      "Title": "Mr.",
+      "Username": "Briver",
+      "ZipCode": "1605"
+    }, {
+      "_id": "05064951171",
+      "Country": "NO",
+      "EmailAddress": "RuneWold@armyspy.com",
+      "Gender": "male",
+      "GivenName": "Rune",
+      "MiddleInitial": "E",
+      "Number": "73",
+      "SSN": "05064951171",
+      "StreetAddress": "Norderhovsgata 63",
+      "Surname": "Wold",
+      "Title": "Mr.",
+      "Username": "Weralause",
+      "ZipCode": "3501"
+    }, {
+      "_id": "14032547069",
+      "Country": "NO",
+      "EmailAddress": "WilliamFauske@jourrapide.com",
+      "Gender": "male",
+      "GivenName": "William",
+      "MiddleInitial": "H",
+      "Number": "74",
+      "SSN": "14032547069",
+      "StreetAddress": "Bøkleva 141",
+      "Surname": "Fauske",
+      "Title": "Mr.",
+      "Username": "Shemas",
+      "ZipCode": "1766"
+    }]
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "*"],
+        ["add", "rdf:type",
+          ["ni", "hr", "person"]
+        ]
+      ]
+    }
+  }
+}

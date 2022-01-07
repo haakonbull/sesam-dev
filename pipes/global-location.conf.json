@@ -1,0 +1,13 @@
+{
+  "_id": "global-location",
+  "type": "pipe",
+  "source": {
+    "type": "merge",
+    "datasets": ["udir-postalcode upc", "geonorge-county gnc"],
+    "identity": "first",
+    "version": 2
+  },
+  "metadata": {
+    "global": true
+  }
+}

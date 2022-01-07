@@ -1,0 +1,36 @@
+{
+  "_id": "string-logic-labs",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "hr-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["add", "fist_in_templiste_2",
+          ["first",
+            ["split", "@", "_S.hr-person:EmailAddress"]
+          ]
+        ],
+        ["add", "Surname_uppercase",
+          ["upper", "_S.Surname"]
+        ],
+        ["add", "birhtdate_separated_by_dot",
+          ["join", ".",
+            ["list",
+              ["substring", 0, 2, "_S.hr-person:SSN"],
+              ["substring", 2, 4, "_S.hr-person:SSN"],
+              ["substring", 4, 6, "_S.hr-person:SSN"]
+            ]
+          ]
+        ],
+        ["add", "title_stripped",
+          ["strip", ".,", "_S.hr-person:Title"]
+        ]
+      ]
+    }
+  }
+}

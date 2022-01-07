@@ -1,0 +1,41 @@
+{
+  "_id": "apply-testing",
+  "type": "pipe",
+  "source": {
+    "type": "embedded",
+    "entities": [{
+      "_id": "1",
+      "list": ["str1", false, "str2"],
+      "values": "dette_er_attributt_1"
+    }]
+  },
+  "transform": [{
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["merge",
+          ["list", {
+            "a": 1
+          }, {
+            "a": 2,
+            "b": 3
+          }]
+        ],
+        ["add", "foo", "bar"],
+        ["add", "foo", "bar2"],
+        ["add", "temp",
+          ["apply", "rule1", "_S.list"]
+        ]
+      ],
+      "rule1": [
+        ["case-eq", "_S.", "str1",
+          ["add", "input_eq_somestring", "yes"], "another string",
+          ["add", "str2", "SE"],
+          ["add", "this_is_the_else_part", "bar"]
+        ],
+        ["add", "made_in_rule1", "_S."],
+        ["comment", "_T."]
+      ]
+    }
+  }]
+}

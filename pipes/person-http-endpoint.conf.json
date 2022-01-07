@@ -1,0 +1,11 @@
+{
+  "_id": "person-http-endpoint",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "person-http"
+  },
+  "sink": {
+    "type": "http_endpoint"
+  }
+}

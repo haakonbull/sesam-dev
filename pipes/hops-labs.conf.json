@@ -1,0 +1,26 @@
+{
+  "_id": "hops-labs",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["in", "~:erp:person", "_S.rdf:type"]
+        ],
+        ["copy", "_id"],
+        ["copy", "global-person:fullname"],
+        ["add", "items",
+          ["hops", {
+            "datasets": ["global-transaction gt"],
+            "where": ["eq", "_S.$ids", "gt.webshop-order:customerId-ni"]
+          }]
+        ]
+      ]
+    }
+  }
+}

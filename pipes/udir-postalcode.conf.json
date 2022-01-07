@@ -1,0 +1,112 @@
+{
+  "_id": "udir-postalcode",
+  "type": "pipe",
+  "source": {
+    "type": "conditional",
+    "alternatives": {
+      "prod": {
+        "type": "json",
+        "system": "udir",
+        "url": "v1/postnummerdata"
+      },
+      "test": {
+        "type": "embedded",
+        "entities": [{
+          "FylkeNummer": "38",
+          "KommuneNummer": "3811",
+          "PostNummer": "3121",
+          "PostSted": "NØTTERØY"
+        }, {
+          "FylkeNummer": "38",
+          "KommuneNummer": "3807",
+          "PostNummer": "3733",
+          "PostSted": "SKIEN"
+        }, {
+          "FylkeNummer": "30",
+          "KommuneNummer": "3007",
+          "PostNummer": "3501",
+          "PostSted": "HØNEFOSS"
+        }, {
+          "FylkeNummer": "50",
+          "KommuneNummer": "5001",
+          "PostNummer": "7080",
+          "PostSted": "HEIMDAL"
+        }, {
+          "FylkeNummer": "54",
+          "KommuneNummer": "5418",
+          "PostNummer": "9325",
+          "PostSted": "BARDUFOSS"
+        }, {
+          "FylkeNummer": "03",
+          "KommuneNummer": "0301",
+          "PostNummer": "0153",
+          "PostSted": "OSLO"
+        }, {
+          "FylkeNummer": "30",
+          "KommuneNummer": "3004",
+          "PostNummer": "1605",
+          "PostSted": "FREDRIKSTAD"
+        }, {
+          "FylkeNummer": "30",
+          "KommuneNummer": "3001",
+          "PostNummer": "1766",
+          "PostSted": "HALDEN"
+        }, {
+          "FylkeNummer": "11",
+          "KommuneNummer": "1103",
+          "PostNummer": "4017",
+          "PostSted": "STAVANGER"
+        }, {
+          "FylkeNummer": "38",
+          "KommuneNummer": "3803",
+          "PostNummer": "3125",
+          "PostSted": "TØNSBERG"
+        }, {
+          "FylkeNummer": "46",
+          "KommuneNummer": "4601",
+          "PostNummer": "5031",
+          "PostSted": "LAKSEVÅG"
+        }, {
+          "FylkeNummer": "18",
+          "KommuneNummer": "1824",
+          "PostNummer": "8657",
+          "PostSted": "MOSJØEN"
+        }, {
+          "FylkeNummer": "54",
+          "KommuneNummer": "5401",
+          "PostNummer": "9011",
+          "PostSted": "TROMSØ"
+        }, {
+          "FylkeNummer": "30",
+          "KommuneNummer": "3025",
+          "PostNummer": "1390",
+          "PostSted": "VOLLEN"
+        }]
+      }
+    },
+    "condition": "$ENV(node-env)"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["comment", "The discarding of sone counties and renames in this pipe is done to simplify and translate the dataset for this guide"],
+        ["discard",
+          ["and",
+            ["in", "_S.FylkeNummer",
+              ["list", "03", "11", "15", "18", "30", "34", "38", "42", "46", "50", "54"]
+            ],
+            ["is-null", "_S.ArvtakerPostnummerDataIdListe"]
+          ]
+        ],
+        ["add", "_id", "_S.PostNummer"],
+        ["rename", "KommuneNummer", "municipality"],
+        ["rename", "PostNummer", "postalcode"],
+        ["rename", "PostSted", "city"],
+        ["add", "rdf:type",
+          ["ni", "udir", "postalcode"]
+        ]
+      ]
+    }
+  }
+}

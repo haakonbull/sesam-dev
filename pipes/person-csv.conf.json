@@ -1,0 +1,19 @@
+{
+  "_id": "person-csv",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["copy", "global-person:*",
+          ["list", "firstname", "middle-initial", "lastname"]
+        ]
+      ]
+    }
+  }
+}

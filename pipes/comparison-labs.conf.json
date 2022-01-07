@@ -1,0 +1,33 @@
+{
+  "_id": "comparison-labs",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy", "_id"],
+        ["copy", "erp-person:MoneyUsed"],
+        ["filter",
+          ["in", "~:erp:person", "_S.rdf:type"]
+        ],
+        ["if",
+          ["gte",
+            ["integer", "_S.erp-person:MoneyUsed"], 10000],
+          [
+            ["add", "big_spender",
+              ["boolean", "true"]
+            ],
+            ["add", "attribut_should_only_exist_if_true", 123]
+          ],
+          ["add", "big_spender",
+            ["boolean", "false"]
+          ]
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "person-typicode",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-person"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["copy",
+          ["list", "_id", "global-person:firstname", "global-person:lastname", "global-person:address"]
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "_id": "testing-ms",
+  "type": "pipe",
+  "source": {
+    "type": "embedded",
+    "entities": [{
+      "_id": 1,
+      "ecl": "halla",
+      "foo": "bar",
+      "legemiddel_maptarget": "foo"
+    }, {
+      "_id": 2,
+      "ecl": "balla",
+      "hei": "hallo",
+      "legemiddel_maptarget": "bar"
+    }]
+  },
+  "sink": {
+    "type": "json",
+    "system": "ms-test-211206",
+    "url": "FOOOOO/BAAAAAR"
+  }
+}
