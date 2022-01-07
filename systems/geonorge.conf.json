@@ -1,0 +1,6 @@
+{
+  "_id": "geonorge",
+  "type": "system:url",
+  "url_pattern": "$ENV(geonorge-baseurl)",
+  "verify_ssl": true
+}

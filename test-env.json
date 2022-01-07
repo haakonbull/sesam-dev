@@ -1,0 +1,8 @@
+﻿{
+  "eledb-db": "rkczpzgg",
+  "eledb-host": "abul.db.elephantsql.com",
+  "geonorge-baseurl": "https://ws.geonorge.no/%s",
+  "node-env": "prod",
+  "pump-mode": "manual",
+  "typicode-baseurl": "https://jsonplaceholder.typicode.com/%s"
+}

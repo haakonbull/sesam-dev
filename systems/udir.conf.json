@@ -1,0 +1,6 @@
+{
+  "_id": "udir",
+  "type": "system:url",
+  "url_pattern": "$ENV(udir-baseurl)",
+  "verify_ssl": true
+}

@@ -1,0 +1,12 @@
+{
+  "_id": "ms-test-211206",
+  "type": "system:microservice",
+  "docker": {
+    "environment": {
+      "url": "asdf"
+    },
+    "image": "hbullh/mytest:1.0.2",
+    "port": 5000
+  },
+  "verify_ssl": true
+}

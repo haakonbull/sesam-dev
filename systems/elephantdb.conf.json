@@ -1,0 +1,8 @@
+{
+  "_id": "elephantdb",
+  "type": "system:postgresql",
+  "database": "$ENV(eledb-db)",
+  "host": "$ENV(eledb-host)",
+  "password": "$SECRET(eledb-pw)",
+  "username": "$ENV(eledb-db)"
+}
