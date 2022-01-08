@@ -1,5 +1,5 @@
 {
-  "_id": "hr-person",
+  "_id": "hr-person-simplesystem",
   "type": "pipe",
   "source": {
     "type": "embedded",
@@ -147,10 +147,7 @@
     "type": "dtl",
     "rules": {
       "default": [
-        ["copy", "*"],
-        ["add", "rdf:type",
-          ["ni", "hr", "person"]
-        ]
+        ["copy", "*"]
       ]
     }
   }

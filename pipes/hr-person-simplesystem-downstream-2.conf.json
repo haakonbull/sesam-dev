@@ -1,20 +1,20 @@
 {
-  "_id": "filter-entities-labs",
+  "_id": "hr-person-simplesystem-downstream-2",
   "type": "pipe",
   "source": {
     "type": "dataset",
-    "dataset": "global-person"
+    "dataset": "hr-person-simplesystem-downstream-1"
   },
   "transform": {
     "type": "dtl",
     "rules": {
       "default": [
-        ["copy", "_id"],
         ["copy", "*"],
-        ["filter",
-          ["in", "~:crm:person", "_S.rdf:type"]
-        ]
+        ["add", "foo2", "bar2"]
       ]
     }
+  },
+  "metadata": {
+    "global": true
   }
 }

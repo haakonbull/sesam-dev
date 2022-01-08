@@ -1,18 +1,16 @@
 {
-  "_id": "person-csv",
+  "_id": "hr-person-simplesystem-downstream-1",
   "type": "pipe",
   "source": {
     "type": "dataset",
-    "dataset": "global-person"
+    "dataset": "hr-person-simplesystem"
   },
   "transform": {
     "type": "dtl",
     "rules": {
       "default": [
         ["copy", "_id"],
-        ["copy", "global-person:*",
-          ["list", "firstname", "middle-initial", "lastname"]
-        ]
+        ["add", "foo", "bar"]
       ]
     }
   }

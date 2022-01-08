@@ -1,0 +1,12 @@
+{
+  "_id": "hr-person-simplesystem-downstream-3",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "hr-person-simplesystem-downstream-2"
+  },
+  "sink": {
+    "type": "csv_endpoint",
+    "columns": ["foo", "foo2"]
+  }
+}
