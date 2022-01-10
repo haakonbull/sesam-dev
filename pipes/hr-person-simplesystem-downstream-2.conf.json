@@ -10,7 +10,7 @@
     "rules": {
       "default": [
         ["copy", "*"],
-        ["add", "foo2", "bar_2_"]
+        ["add", "foo2", "BAR_2_"]
       ]
     }
   },
