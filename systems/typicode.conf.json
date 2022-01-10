@@ -1,6 +1,0 @@
-{
-  "_id": "typicode",
-  "type": "system:url",
-  "url_pattern": "$ENV(typicode-baseurl)",
-  "verify_ssl": true
-}
